@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="bout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Patrick Dorimon - About</title>
+</head>
+<body>
+    <nav>
+ <div class="links" id="nav-links">
+                <a href="Home.html">Home</a>
+                <a href="bout.html" class="active">About</a>
+                <a href="Skills.html">Skills</a>
+                <a href="Services.html">Services</a>
+                <a href="Contact.html">Contact</a>
+                <button onclick="window.location.href = 'https://www.facebook.com/share/18xMjdKCmi/'">Facebook</button>
+            </div>
+            <i class="fas fa-bars hamburger" id="hamburger"></i>
+        </div>
+    </nav>
+    
+    <section>
+        <div class="content-container">
+            <div class="content">
+                <h1 data-aos="fade-right" data-aos-duration="1500">About My Self</h1>
+                <p data-aos="flip-down" data-aos-duration="1500" data-aos-delay="200">I'm a Practicing Web designer with experience in making website using HTML and Javascript.</p>
+                
+                <div class="values">
+                    <div class="value" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="600">
+                        <h3>20</h3>
+                        <p>Age</p>
+                    </div>
+                    <div class="value" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="750">
+                        <h3>Web Designer</h3>
+                        <p>Experience</p>
+                    </div>
+                    <div class="value" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="900">
+                        <h3>BSIS</h3>
+                        <p>Course</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="image" data-aos="zoom-in" data-aos-duration="2000">
+                <img src="dori.jpg" alt="Patrick Dorimon">
+            </div>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+        
+        // Mobile menu toggle
+        document.getElementById('hamburger').addEventListener('click', function() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('active');
+            this.classList.toggle('fa-times');
+        });
+    </script>
+</body>
+</html>

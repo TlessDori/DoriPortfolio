@@ -1,0 +1,273 @@
+:root {
+  --bg-light: #fff;
+  --text-light: #000;
+  --bg-dark: #121212;
+  --text-dark: #f0f0f0;
+  --primary: #ff9aa2;
+  --primary-dark: #ff7b8b;
+  --nav-bg: rgba(0, 0, 0, 0.8);
+  --nav-link-color: white; 
+  --nav-hover-bg: rgba(255, 255, 255, 0.2);
+  --footer-bg: rgba(0, 0, 0, 0.5);
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 60px; /* Account for fixed nav */
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: var(--primary);
+}
+
+/* Navigation */
+nav {
+  background-color: var(--nav-bg);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 1rem 0;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.logo {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.logo span {
+  color: var(--primary);
+}
+
+.nav-links ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: var(--nav-link-color);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: var(--transition);
+}
+
+.nav-links a:hover {
+  background-color: var(--nav-hover-bg);
+  color: var(--primary);
+}
+
+.hamburger-menu {
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+  display: none;
+}
+
+/* Contact Form */
+main {
+  flex: 1;
+  padding: 2rem;
+}
+
+#contact {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+form {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #333;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(255, 154, 162, 0.2);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.submit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  width: 100%;
+}
+
+.submit-btn:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+  background-color: var(--footer-bg);
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: auto;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-links a {
+  color: white;
+  font-size: 1.2rem;
+  transition: var(--transition);
+}
+
+.social-links a:hover {
+  color: var(--primary);
+  transform: translateY(-3px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header {
+    padding: 1.5rem 1rem;
+  }
+  
+  header h1 {
+    font-size: 2rem;
+  }
+  
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background-color: var(--nav-bg);
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition);
+    z-index: 1001;
+  }
+  
+  .nav-links.active {
+    right: 0;
+  }
+  
+  .nav-links ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .hamburger-menu {
+    display: block;
+    z-index: 1002;
+  }
+  
+  form {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 1rem;
+    margin-top: 50px;
+  }
+  
+  header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .nav-container {
+    padding: 0 1rem;
+  }
+  
+  #contact {
+    padding: 1rem;
+  }
+  
+  form {
+    padding: 1rem;
+  }
+  
+  .submit-btn {
+    padding: 0.7rem;
+  }
+}
